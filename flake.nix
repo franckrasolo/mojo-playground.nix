@@ -14,8 +14,6 @@
       forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
         pkgs = import nixpkgs { inherit overlays system; };
       });
-
-      modular_home = "$HOME/.modular";
     in
     {
       devShells = forAllSystems ({ pkgs }: with pkgs; {
@@ -32,10 +30,11 @@
 
           shellHook = ''
             export MACOSX_DEPLOYMENT_TARGET=13.0
+            export MODULAR_HOME=$HOME/.modular
             export MOJO_PYTHON_LIBRARY=/opt/homebrew/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/Python
-            export PATH=${modular_home}/pkg/packages.modular.com_mojo/bin:$PATH
+            export PATH=$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH
 
-            sed 's/-lcurses/-lncurses/' -i ${modular_home}/modular.cfg
+            sed 's/-lcurses/-lncurses/' -i $MODULAR_HOME/modular.cfg
 
             if test -x "$(command -v mojo)"; then
               modular update mojo
