@@ -3,13 +3,13 @@ set dotenv-load := true
 _targets:
   @just --list --unsorted --list-heading $'Available targets:\n' --list-prefix "  "
 
-# runs a given program
+# runs a given program with either '.mojo' or '.🔥' extension
 @run program:
-  mojo {{program}}.mojo
+  mojo {{program}}.*
 
-# builds a given program
+# builds a given program with either '.mojo' or '.🔥' extension
 @build program:
-  mojo build {{program}}.mojo
+  mojo build {{program}}.*
 
 # prints names and version numbers of the shared libraries for a given program
 @libs program:
