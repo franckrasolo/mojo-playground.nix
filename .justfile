@@ -3,6 +3,10 @@ set dotenv-load := true
 _targets:
   @just --list --unsorted --list-heading $'Available targets:\n' --list-prefix "  "
 
+# updates the top-level flake lock file
+@update:
+  nix flake update --commit-lock-file --commit-lockfile-summary "update Nix flake inputs"
+
 # runs a given program
 @run program:
   mojo {{program}}.mojo
