@@ -17,11 +17,17 @@
     in
     {
       devShells = forAllSystems ({ pkgs }: with pkgs; {
-        default = mkShell {
+        default = mkShell rec {
+          venvDir = "venv";
+
+          PIP_REQUIRE_VIRTUALENV = "true";
+
           buildInputs = with pkgs; [
             gnused
             ncurses
             zlib
+
+            python311Packages.venvShellHook
           ];
 
           packages = [
@@ -41,6 +47,9 @@
             else
               modular install mojo
             fi
+
+            python -m venv --upgrade --upgrade-deps --prompt venv ${venvDir}
+            pip install --quiet --upgrade pip --requirement requirements.txt
           '';
         };
       });
