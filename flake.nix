@@ -47,7 +47,7 @@
               modular install mojo
             fi
 
-            python -m venv --upgrade --upgrade-deps --prompt venv ${venvDir}
+            python -m venv --without-pip --upgrade --upgrade-deps --prompt venv ${venvDir}
             pdm update --no-self --update-all --fail-fast
           '';
         };
