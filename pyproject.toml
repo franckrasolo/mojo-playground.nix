@@ -1,6 +1,6 @@
 [project]
 name = "mojo-playground"
-version = ""
+version = "0.0.1"
 description = "A playground for experimenting with the Mojo 🔥 programming language on macOS arm64"
 authors = [
     { name = "Franck Rasolo", email = "franckrasolo@users.noreply.github.com" },
