@@ -20,8 +20,6 @@
         default = mkShell rec {
           venvDir = "venv";
 
-          PIP_REQUIRE_VIRTUALENV = "true";
-
           buildInputs = with pkgs; [
             gnused
             ncurses
@@ -50,7 +48,6 @@
             fi
 
             python -m venv --upgrade --upgrade-deps --prompt venv ${venvDir}
-            pip install --quiet --upgrade pip
             pdm update --no-self --update-all --fail-fast
           '';
         };
