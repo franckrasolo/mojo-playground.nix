@@ -51,6 +51,7 @@
 
             python -m venv --upgrade --upgrade-deps --prompt venv ${venvDir}
             pip install --quiet --upgrade pip
+            pdm update --no-self --update-all --fail-fast
           '';
         };
       });
