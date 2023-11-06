@@ -32,6 +32,7 @@
 
           packages = [
             just
+            pdm
           ];
 
           postShellHook = ''
