@@ -1,5 +1,5 @@
 [project]
-name = "Mojo Playground"
+name = "mojo-playground"
 version = ""
 description = "A playground for experimenting with the Mojo 🔥 programming language on macOS arm64"
 authors = [
