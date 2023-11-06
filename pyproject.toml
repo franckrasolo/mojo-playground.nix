@@ -1,0 +1,11 @@
+[project]
+name = "Mojo Playground"
+version = ""
+description = "A playground for experimenting with the Mojo 🔥 programming language on macOS arm64"
+authors = [
+    { name = "Franck Rasolo", email = "franckrasolo@users.noreply.github.com" },
+]
+dependencies = []
+requires-python = ">=3.11"
+readme = "README.md"
+license = { text = "MIT" }
