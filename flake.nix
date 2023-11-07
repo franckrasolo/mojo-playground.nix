@@ -25,7 +25,7 @@
             ncurses
             zlib
 
-            python311Packages.venvShellHook
+            python312Packages.venvShellHook
           ];
 
           packages = [
@@ -36,7 +36,7 @@
           postShellHook = ''
             export MACOSX_DEPLOYMENT_TARGET=13.0
             export MODULAR_HOME=$HOME/.modular
-            export MOJO_PYTHON_LIBRARY=$(python -c "import sys; print(sys.base_prefix)")/lib/libpython3.11.dylib
+            export MOJO_PYTHON_LIBRARY=$(python -c "import sys; print(sys.base_prefix)")/lib/libpython3.12.dylib
             export PATH=$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH
 
             sed 's/-lcurses/-lncurses/' -i $MODULAR_HOME/modular.cfg
