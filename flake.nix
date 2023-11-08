@@ -42,7 +42,7 @@
             sed 's/-lcurses/-lncurses/' -i $MODULAR_HOME/modular.cfg
 
             if test -x "$(command -v mojo)"; then
-              modular update mojo
+              modular update mojo 2> /dev/null
             else
               modular install mojo
             fi
