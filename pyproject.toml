@@ -13,4 +13,5 @@ license = { text = "MIT" }
 [tool.pdm.dev-dependencies]
 testing = [
     "pytest>=7.4.3",
+    "pytest-mojo @ git+https://github.com/guidorice/mojo-pytest.git@v0.1.1",
 ]
