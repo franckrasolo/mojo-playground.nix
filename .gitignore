@@ -1,2 +1,4 @@
 .direnv/
+.idea/
 .pdm-python
+venv/
