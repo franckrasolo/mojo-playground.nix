@@ -34,7 +34,7 @@
           ];
 
           postShellHook = ''
-            export MACOSX_DEPLOYMENT_TARGET=13.0
+            export MACOSX_DEPLOYMENT_TARGET=14.0
             export MODULAR_HOME=$HOME/.modular
             export MOJO_PYTHON_LIBRARY=$(python -c "
             import sys, sysconfig
