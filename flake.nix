@@ -51,6 +51,7 @@
             fi
 
             python -m venv --without-pip --upgrade --upgrade-deps --prompt venv ${venvDir}
+            pdm config check_update false
             pdm update --no-self --update-all --fail-fast
           '';
         };
