@@ -20,10 +20,6 @@ _targets:
 @clean program:
   rm -vf {{program}}
 
-# checks Nix flake inputs
-@flake-check:
-  nix run "github:DeterminateSystems/flake-checker"
-
 # updates the top-level flake lock file
 @update:
   nix flake update --commit-lock-file --commit-lockfile-summary "update Nix flake inputs"
