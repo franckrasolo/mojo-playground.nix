@@ -1,4 +1,5 @@
 set dotenv-load := true
+set fallback := true
 
 _targets:
   @just --list --unsorted --list-heading $'Available targets:\n' --list-prefix "  "
