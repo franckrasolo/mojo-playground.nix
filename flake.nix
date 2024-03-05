@@ -55,8 +55,8 @@
               modular install mojo
             fi
 
+            export PDM_CHECK_UPDATE=0
             python -m venv --without-pip --upgrade --upgrade-deps --prompt venv ${venvDir}
-            pdm config check_update false
             pdm update --no-self --update-all --fail-fast
           '';
         };
