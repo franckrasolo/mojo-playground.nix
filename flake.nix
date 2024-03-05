@@ -39,7 +39,7 @@
 
             export MACOSX_DEPLOYMENT_TARGET=14.0
             export MODULAR_HOME=$HOME/.modular
-            export MOJO_PYTHON_LIBRARY=$(python -c "
+            export MOJO_PYTHON_LIBRARY=$(${python312}/bin/python -c "
             import sys, sysconfig
             print(f'{sys.base_prefix}/lib/libpython{sysconfig.get_python_version()}.dylib')
             ")
@@ -54,7 +54,7 @@
             fi
 
             export PDM_CHECK_UPDATE=0
-            python -m venv --without-pip --upgrade --upgrade-deps --prompt venv ${venvDir}
+            ${python312}/bin/python -m venv --without-pip --upgrade --upgrade-deps --prompt venv ${venvDir}
             pdm update --no-self --update-all --fail-fast
           '';
         };
