@@ -20,7 +20,7 @@
         default = mkShell rec {
           venvDir = "venv";
 
-          buildInputs = with pkgs; [
+          buildInputs = [
             gnused
             ncurses
             zlib
