@@ -33,12 +33,10 @@
             pdm
           ];
 
-          shellHook = ''
+          postShellHook = ''
             # health checks for Nix flake inputs
             nix run "github:DeterminateSystems/flake-checker"
-          '';
 
-          postShellHook = ''
             export MACOSX_DEPLOYMENT_TARGET=14.0
             export MODULAR_HOME=$HOME/.modular
             export MOJO_PYTHON_LIBRARY=$(python -c "
