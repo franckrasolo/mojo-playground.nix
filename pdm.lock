@@ -5,7 +5,7 @@
 groups = ["default", "testing"]
 strategy = ["cross_platform"]
 lock_version = "4.4.1"
-content_hash = "sha256:41bc76088e04e4b6b385a6125d6d0c21bc65f95f20d375e90e7f7dbf18aba379"
+content_hash = "sha256:e9417e21efd9f81b1f8d73375f502f3fb6a41d50dfa5a0778df39c166f245185"
 
 [[package]]
 name = "colorama"
@@ -65,10 +65,10 @@ files = [
 
 [[package]]
 name = "pytest-mojo"
-version = "0.7.0"
+version = "24.1.0"
 git = "https://github.com/guidorice/mojo-pytest.git"
-ref = "v0.7.0"
-revision = "0f173831297145e2ca8e87cca8c52d52f351e456"
+ref = "v24.1.0"
+revision = "4d247c9b51b4e639deedb398a31f564951413a39"
 summary = ""
 dependencies = [
     "pytest",
