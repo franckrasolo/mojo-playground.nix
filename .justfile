@@ -24,3 +24,13 @@ _targets:
 # updates the top-level flake lock file
 @update:
   nix flake update --commit-lock-file --commit-lockfile-summary "update Nix flake inputs"
+
+# runs all tests under the examples directory
+check:
+  #!/usr/bin/env sh
+
+  export PYTHONPATH=$(pwd)/examples/packages_with_a_single_tests_directory
+  pytest --mojo-include examples/packages_with_a_single_tests_directory examples/packages_with_a_single_tests_directory
+
+  export PYTHONPATH=$(pwd)/examples/packages_with_src_and_tests_directories/src
+  pytest --mojo-include examples/packages_with_src_and_tests_directories/src examples/packages_with_src_and_tests_directories/tests
