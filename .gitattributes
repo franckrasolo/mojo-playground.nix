@@ -1,3 +1,2 @@
-.envrc    linguist-vendored
-**/*.mojo linguist-language=Mojo
-**/*.🔥   linguist-language=Mojo
+.envrc linguist-vendored
+*.🔥   linguist-language=Mojo
