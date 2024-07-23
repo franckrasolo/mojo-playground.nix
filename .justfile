@@ -29,8 +29,8 @@ _targets:
 check:
   #!/usr/bin/env sh
 
-  export PYTHONPATH=$(pwd)/examples/packages_with_a_single_tests_directory
-  pytest --mojo-include examples/packages_with_a_single_tests_directory examples/packages_with_a_single_tests_directory
+  export PYTHONPATH=$(pwd)/projects/packages_with_a_single_tests_directory
+  pytest --mojo-include projects/packages_with_a_single_tests_directory projects/packages_with_a_single_tests_directory
 
-  export PYTHONPATH=$(pwd)/examples/packages_with_src_and_tests_directories/src
-  pytest --mojo-include examples/packages_with_src_and_tests_directories/src examples/packages_with_src_and_tests_directories/tests
+  export PYTHONPATH=$(pwd)/projects/packages_with_src_and_tests_directories/src
+  pytest --mojo-include projects/packages_with_src_and_tests_directories/src projects/packages_with_src_and_tests_directories/tests
