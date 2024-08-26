@@ -3,9 +3,9 @@
 
 [metadata]
 groups = ["default", "testing"]
-strategy = ["cross_platform"]
+strategy = []
 lock_version = "4.5.0"
-content_hash = "sha256:2f5e676504d5833a19970f4d03bec0d0e8472fc311106d40ff24c80515dfe5ab"
+content_hash = "sha256:526a3eb5528776ded8fc6a4474273edde7cca4cc41a570e440fa541568a43ad8"
 
 [[metadata.targets]]
 requires_python = ">=3.12"
