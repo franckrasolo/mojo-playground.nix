@@ -1,4 +1,5 @@
 .direnv/
 .idea/
 .pdm-python
+__pycache__/
 venv/
