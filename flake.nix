@@ -54,7 +54,8 @@
             fi
 
             export PDM_CHECK_UPDATE=0
-            ${python313FreeThreading}/bin/python3.13t -m venv --without-pip --upgrade --upgrade-deps --prompt venv ${venvDir}
+            ${python313FreeThreading}/bin/python3.13t -m venv --without-pip --prompt venv ${venvDir}
+            ${python313FreeThreading}/bin/python3.13  -m venv --upgrade --upgrade-deps ${venvDir}
             pdm update --no-self --update-all --fail-fast
           '';
         };
