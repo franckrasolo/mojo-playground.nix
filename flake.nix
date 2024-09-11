@@ -25,7 +25,7 @@
             ncurses
             zlib
 
-            python313Packages.venvShellHook
+            python313FreeThreading.pkgs.venvShellHook
           ];
 
           packages = [
@@ -39,7 +39,7 @@
 
             export MACOSX_DEPLOYMENT_TARGET=14.0
             export MODULAR_HOME=$HOME/.modular
-            export MOJO_PYTHON_LIBRARY=$(${python313}/bin/python -c "
+            export MOJO_PYTHON_LIBRARY=$(${python313FreeThreading}/bin/python3.13t -c "
             import sys, sysconfig
             print(f'{sys.base_prefix}/lib/libpython{sysconfig.get_python_version()}.dylib')
             ")
@@ -54,7 +54,7 @@
             fi
 
             export PDM_CHECK_UPDATE=0
-            ${python313}/bin/python -m venv --without-pip --upgrade --upgrade-deps --prompt venv ${venvDir}
+            ${python313FreeThreading}/bin/python3.13t -m venv --without-pip --upgrade --upgrade-deps --prompt venv ${venvDir}
             pdm update --no-self --update-all --fail-fast
           '';
         };
