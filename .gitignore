@@ -1,5 +1,6 @@
 .direnv/
 .idea/
 .pdm-python
+.pytest_cache/
 __pycache__/
 venv/
