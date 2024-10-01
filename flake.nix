@@ -17,46 +17,32 @@
     in
     {
       devShells = forAllSystems ({ pkgs }: with pkgs; {
-        default = mkShell rec {
-          venvDir = "venv";
-
+        default = mkShell {
           buildInputs = [
             gnused
             ncurses
             zlib
-
-            python313FreeThreading.pkgs.venvShellHook
           ];
 
           packages = [
             just
-            pdm
           ];
 
-          postShellHook = ''
+          shellHook = ''
             # health checks for Nix flake inputs
             nix run "github:DeterminateSystems/flake-checker"
 
             export MACOSX_DEPLOYMENT_TARGET=14.0
-            export MODULAR_HOME=$HOME/.modular
-            export MOJO_PYTHON_LIBRARY=$(${python313FreeThreading}/bin/python3.13t -c "
-            import sys, sysconfig
-            print(f'{sys.base_prefix}/lib/libpython{sysconfig.get_python_version()}.dylib')
-            ")
-            export PATH=$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH
+            export MAGIC_VERSION=$HOME/.modular
+            export MAGIC_NO_PATH_UPDATE=1
+            export MODULAR_HOME=$MAGIC_VERSION
 
-            sed 's/-lcurses/-lncurses/' -i $MODULAR_HOME/modular.cfg
+            # curl -ssL https://magic.modular.com/f3a6b733-35d3-4233-bc28-21a8a09099a5 | bash
+            # export PATH=$MODULAR_HOME/bin:$PATH
+            # eval "$(magic completion --shell zsh)"
 
-            if test -x "$(command -v mojo)"; then
-              modular update mojo 2> /dev/null
-            else
-              modular install mojo
-            fi
-
-            export PDM_CHECK_UPDATE=0
-            ${python313FreeThreading}/bin/python3.13t -m venv --without-pip --prompt venv ${venvDir}
-            ${python313FreeThreading}/bin/python3.13  -m venv --upgrade --upgrade-deps ${venvDir}
-            pdm update --no-self --update-all --fail-fast
+            magic self-update --version 0.2.3 --force
+            sed 's/-lcurses/-lncurses/' -i .magic/envs/default/share/max/modular.cfg
           '';
         };
       });
