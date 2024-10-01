@@ -4,3 +4,10 @@
 .pytest_cache/
 __pycache__/
 venv/
+
+# pixi environments
+.pixi
+*.egg-info
+
+# magic environments
+.magic
