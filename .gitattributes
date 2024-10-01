@@ -1,2 +1,4 @@
 .envrc linguist-vendored
 *.🔥   linguist-language=Mojo
+
+magic.lock linguist-language=YAML linguist-generated=true
