@@ -25,6 +25,7 @@
           ];
 
           packages = [
+            direnv
             just
           ];
 
