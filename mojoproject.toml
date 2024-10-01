@@ -1,0 +1,18 @@
+[project]
+name = "mojo-playground"
+description = "A playground for experimenting with the Mojo 🔥 programming language on macOS arm64"
+version = "0.1.0"
+authors = ["Franck Rasolo <franckrasolo@users.noreply.github.com>"]
+channels = ["conda-forge", "https://conda.modular.com/max", "https://conda.modular.com/max-nightly"]
+platforms = ["osx-arm64"]
+
+[dependencies]
+max = ">=24.5.0,<25"
+python = ">=3.12"
+
+[pypi-dependencies]
+pytest = { version = ">=8.3.3" }
+pytest-xdist = { version = ">=3.6.1" }
+pytest-mojo = { git = "https://github.com/guidorice/mojo-pytest.git" }
+
+[tasks]
