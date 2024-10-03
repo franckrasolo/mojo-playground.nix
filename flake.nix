@@ -36,10 +36,14 @@
             export MACOSX_DEPLOYMENT_TARGET=14.0
             export MAGIC_VERSION=$HOME/.modular
             export MAGIC_NO_PATH_UPDATE=1
-            export MODULAR_HOME=$MAGIC_VERSION
+
+            export MAGIC_ENV=$(pwd)/.magic/envs/default
+            export PATH=$MAGIC_ENV/bin:$PATH
+            export MODULAR_MOJO_IMPORT_PATH=$MAGIC_ENV/lib/mojo
+            export MODULAR_MOJO_MAX_IMPORT_PATH=$MODULAR_MOJO_IMPORT_PATH
 
             # curl -ssL https://magic.modular.com/f3a6b733-35d3-4233-bc28-21a8a09099a5 | bash
-            # export PATH=$MODULAR_HOME/bin:$PATH
+            # export PATH=$HOME/.modular/bin:$PATH
             # eval "$(magic completion --shell zsh)"
 
             magic self-update --version 0.2.3 --force
