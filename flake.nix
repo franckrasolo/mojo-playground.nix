@@ -27,6 +27,7 @@
           packages = [
             direnv
             just
+            tokei
           ];
 
           shellHook = ''
