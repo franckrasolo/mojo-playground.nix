@@ -47,7 +47,7 @@
             # export PATH=$HOME/.modular/bin:$PATH
             # eval "$(magic completion --shell zsh)"
 
-            magic self-update --version 0.7.0 --force
+            magic self-update --force
             sed 's/-lcurses/-lncurses/' -i .magic/envs/default/share/max/modular.cfg
           '';
         };
