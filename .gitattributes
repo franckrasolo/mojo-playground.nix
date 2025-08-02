@@ -1,4 +1,5 @@
 .envrc linguist-vendored
 *.🔥   linguist-language=Mojo
 
-magic.lock linguist-language=YAML linguist-generated=true
+# SCM syntax highlighting & preventing 3-way merges
+pixi.lock merge=binary linguist-language=YAML linguist-generated=true
