@@ -27,7 +27,7 @@
 
           shellHook = ''
             # health checks for Nix flake inputs
-            nix run "github:DeterminateSystems/flake-checker/v0.2.8"
+            nix run https://flakehub.com/f/NixOS/nixpkgs/0.1#flake-checker
 
             export MACOSX_DEPLOYMENT_TARGET="15.0"
           '';
